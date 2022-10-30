@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Main {
     private static final Employee[] employees = new Employee[10];
 
@@ -6,12 +10,12 @@ public class Main {
     public static int calculateSumSalary() {
         int sum = 0;
         for (Employee employee : employees) {
-            sum+= employee.getSalary();
+            sum=sum+employee.getSalary();
         }
         return sum;}
 
     public static Employee getEmployeeMinSalary() {
-        int min = Integer.MAX_VALUE;
+        int min = employees[0].getSalary();
         Employee targetEmployee = null;
         for (Employee employee : employees) {
             if (employee != null && employee.getSalary() < min) {
@@ -23,7 +27,7 @@ public class Main {
     }
 
     public static Employee getEmployeeMaxSalary() {
-        int max = Integer.MIN_VALUE;
+        int max = employees[0].getSalary();
         Employee targetEmployee = null;
         for (Employee employee : employees) {
             if (employee != null && employee.getSalary() > max) {
@@ -35,7 +39,6 @@ public class Main {
     }
 
     public static int calculateAverageSalary() {
-        Employee[] employees = new Employee[10];
         return calculateSumSalary() / employees.length;
     }
 
@@ -51,6 +54,7 @@ public class Main {
         employees[7] = new Employee("Зайцев Ираклий Альвианович", 4, 40500);
         employees[8] = new Employee("Иванков Ефим Глебович", 5, 44000);
         employees[9] = new Employee("Андреева Милена Игнатьевна", 5, 42500);
+
 
         for (int i = 0; i < employees.length; i++) {
             System.out.println("employees[i] = " + employees[i]);
