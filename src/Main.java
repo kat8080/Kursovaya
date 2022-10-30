@@ -10,7 +10,7 @@ public class Main {
     public static int calculateSumSalary() {
         int sum = 0;
         for (Employee employee : employees) {
-            sum=sum+employee.getSalary();
+            sum = sum + employee.getSalary();
         }
         return sum;}
 
